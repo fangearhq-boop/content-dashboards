@@ -66,12 +66,20 @@
     font-size: 0.82rem;
     color: rgba(255,255,255,0.55);
   }
+  .meta-date::before { content: "\1F4C5 "; }
+  .meta-posts::before { content: "\1F4DD "; }
+  .meta-count::before { content: "\1F4CA "; }
   .arrow {
     font-size: 0.95rem;
     font-weight: 600;
     color: #FF8A00;
     white-space: nowrap;
     margin-left: 1rem;
+  }
+  .empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: rgba(255,255,255,0.4);
   }
   .footer {
     text-align: center;
@@ -102,22 +110,29 @@
 </div>
 
 <div class="container">
+      <a class="niche-card" href="cosp/index.html">
+        <div class="card-content">
+          <h2>COSP</h2>
+          <div class="card-meta">
+            <span class="meta-date">Last run: Thursday, March 19</span><span class="meta-count">1 dashboard</span>
+          </div>
+        </div>
+        <div class="arrow">View Dashboards &rarr;</div>
+      </a>
       <a class="niche-card" href="cubs/index.html">
         <div class="card-content">
-          <h2>Chicago Cubs Fan HQ</h2>
+          <h2>CUBS</h2>
           <div class="card-meta">
-            <span>Last run: Thursday, March 19</span>
-            <span>5 dashboards</span>
+            <span class="meta-date">Last run: Thursday, March 19</span><span class="meta-count">5 dashboards</span>
           </div>
         </div>
         <div class="arrow">View Dashboards &rarr;</div>
       </a>
       <a class="niche-card" href="ils/index.html">
         <div class="card-content">
-          <h2>I Love Softball</h2>
+          <h2>ILS</h2>
           <div class="card-meta">
-            <span>Last run: Thursday, March 19</span>
-            <span>5 dashboards</span>
+            <span class="meta-date">Last run: Thursday, March 19</span><span class="meta-count">5 dashboards</span>
           </div>
         </div>
         <div class="arrow">View Dashboards &rarr;</div>
