@@ -370,10 +370,18 @@
 
         <div class="sidebar-section">
             <div class="sidebar-section-title">Content Types</div>
+            <div class="nav-item" onclick="filterByType('daily_brief')">
+                Daily Brief
+                <span class="nav-item-count">7</span>
+            </div>
+            <div class="nav-item" onclick="filterByType('x_post')">
+                X / Twitter Posts
+                <span class="nav-item-count">9</span>
+            </div>
 
             <div class="nav-item" onclick="filterByType('all')">
                 All Items
-                <span class="nav-item-count">0</span>
+                <span class="nav-item-count">16</span>
             </div>
         </div>
 
@@ -409,7 +417,7 @@
             <div class="header-meta">
                 <div class="progress-bar">
                     <div class="progress-label">
-                        <span id="reviewed-count">0</span> of <span id="total-count">0</span> items reviewed
+                        <span id="reviewed-count">0</span> of <span id="total-count">16</span> items reviewed
                     </div>
                     <div class="progress-container">
                         <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
@@ -439,6 +447,616 @@
 
         <div class="content">
             <div class="cards-container" id="cards-container">
+                <div class="card" data-id="story-1-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-1-daily_brief">
+                        <div class="card-content-text">Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know
+- **Tier:** 1</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-1-daily_brief" placeholder="Edit content here...">Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know
+- **Tier:** 1</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-1-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-1-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-1-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-1-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-1-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-1-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-1-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-1-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-1-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-1-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-1-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-1-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 1</span><span class="tweet-meta-badge tweet-meta-tier">Tier 1</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-1-x_post-1">
+                        <div class="card-content-text">Smoke visible across Colorado Springs from a 670-acre wildfire on Highway 115 near Fort Carson. No fires within city limits. Hwy 115 closed both directions south of COS.
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-1-x_post-1" placeholder="Edit content here...">Smoke visible across Colorado Springs from a 670-acre wildfire on Highway 115 near Fort Carson. No fires within city limits. Hwy 115 closed both directions south of COS.
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-1-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-1-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-1-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-1-x_post-1">Characters: 230/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-1-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-1-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-1-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-1-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-1-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-1-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-1-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-1-x_post-1"></div>
+                </div>
+                <div class="card" data-id="story-2-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Spring Break Camps Start Monday — Last-Minute Options Still Open</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-2-daily_brief">
+                        <div class="card-content-text">Spring Break Camps Start Monday — Last-Minute Options Still Open
+- **Tier:** 1</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-2-daily_brief" placeholder="Edit content here...">Spring Break Camps Start Monday — Last-Minute Options Still Open
+- **Tier:** 1</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-2-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-2-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-2-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-2-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-2-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-2-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-2-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-2-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-2-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-2-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-2-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-2-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Spring Break Camps Start Monday — Last-Minute Options Still Open</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 2</span><span class="tweet-meta-badge tweet-meta-tier">Tier 1</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-2-x_post-1">
+                        <div class="card-content-text">Spring break starts Monday. CMZoo camps are sold out but spots remain at CityROCK (ages 6-14), Academy of Children&#x27;s Theatre (grades 1-12), and Fountain Creek Nature Center (grades 1-5). 🏕️
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-2-x_post-1" placeholder="Edit content here...">Spring break starts Monday. CMZoo camps are sold out but spots remain at CityROCK (ages 6-14), Academy of Children&#x27;s Theatre (grades 1-12), and Fountain Creek Nature Center (grades 1-5). 🏕️
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-2-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-2-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-2-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-2-x_post-1">Characters: 250/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-2-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-2-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-2-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-2-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-2-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-2-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-2-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-2-x_post-1"></div>
+                </div>
+                <div class="card" data-id="story-3-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-3-daily_brief">
+                        <div class="card-content-text">Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City
+- **Tier:** 2</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-3-daily_brief" placeholder="Edit content here...">Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City
+- **Tier:** 2</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-3-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-3-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-3-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-3-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-3-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-3-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-3-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-3-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-3-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-3-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-3-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-3-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 3</span><span class="tweet-meta-badge tweet-meta-tier">Tier 2</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-3-x_post-1">
+                        <div class="card-content-text">Tomorrow, March 21, noon-6 PM: Mad Hatter Saturday at Bancroft Park in Old Colorado City. Free admission, costume contest at 3 PM, live music, and magic. Alice in Wonderland theme. 🎩
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-3-x_post-1" placeholder="Edit content here...">Tomorrow, March 21, noon-6 PM: Mad Hatter Saturday at Bancroft Park in Old Colorado City. Free admission, costume contest at 3 PM, live music, and magic. Alice in Wonderland theme. 🎩
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-3-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-3-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-3-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-3-x_post-1">Characters: 243/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-3-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-3-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-3-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-3-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-3-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-3-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-3-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-3-x_post-1"></div>
+                </div>
+                <div class="card" data-id="story-4-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">CPSC Recall: Kids&#x27; Writing Tablets Pulled Over Battery Danger</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-4-daily_brief">
+                        <div class="card-content-text">CPSC Recall: Kids&#x27; Writing Tablets Pulled Over Battery Danger
+- **Tier:** 1</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-4-daily_brief" placeholder="Edit content here...">CPSC Recall: Kids&#x27; Writing Tablets Pulled Over Battery Danger
+- **Tier:** 1</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-4-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-4-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-4-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-4-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-4-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-4-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-4-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-4-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-4-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-4-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-4-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-4-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">CPSC Recall: Kids&#x27; Writing Tablets Pulled Over Battery Danger</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 4</span><span class="tweet-meta-badge tweet-meta-tier">Tier 1</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-4-x_post-1">
+                        <div class="card-content-text">CPSC recall: KTEBO writing tablet toys sold on Amazon have an unsecured battery compartment. Button cell batteries are a serious ingestion hazard for kids. Free replacement available. ⚠️
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-4-x_post-1" placeholder="Edit content here...">CPSC recall: KTEBO writing tablet toys sold on Amazon have an unsecured battery compartment. Button cell batteries are a serious ingestion hazard for kids. Free replacement available. ⚠️
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-4-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-4-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-4-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-4-x_post-1">Characters: 247/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-4-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-4-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-4-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-4-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-4-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-4-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-4-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-4-x_post-1"></div>
+                </div>
+                <div class="card" data-id="story-5-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Lancet Study: Dad&#x27;s Health Before Conception Affects Baby&#x27;s Future</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-5-daily_brief">
+                        <div class="card-content-text">Lancet Study: Dad&#x27;s Health Before Conception Affects Baby&#x27;s Future
+- **Tier:** 2</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-5-daily_brief" placeholder="Edit content here...">Lancet Study: Dad&#x27;s Health Before Conception Affects Baby&#x27;s Future
+- **Tier:** 2</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-5-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-5-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-5-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-5-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-5-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-5-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-5-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-5-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-5-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-5-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-5-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-5-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Lancet Study: Dad&#x27;s Health Before Conception Affects Baby&#x27;s Future</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 5-1</span><span class="tweet-meta-badge tweet-meta-tier">Tier 2</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-5-x_post-1">
+                        <div class="card-content-text">New Lancet study: fathers&#x27; health before conception — weight, substance use, stress — directly affects pregnancy and child outcomes. Paternal drinking linked to 35% higher birth defect risk.
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-5-x_post-1" placeholder="Edit content here...">New Lancet study: fathers&#x27; health before conception — weight, substance use, stress — directly affects pregnancy and child outcomes. Paternal drinking linked to 35% higher birth defect risk.
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-5-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-5-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-5-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-5-x_post-1">Characters: 251/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-5-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-5-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-5-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-5-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-5-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-5-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-5-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-5-x_post-1"></div>
+                </div>
+                <div class="card" data-id="story-5-x_post-2" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Lancet Study: Dad&#x27;s Health Before Conception Affects Baby&#x27;s Future</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 5-2</span><span class="tweet-meta-badge tweet-meta-tier">Tier 2</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-5-x_post-2">
+                        <div class="card-content-text">The researchers found some paternal health effects actually exceed maternal ones. Preconception health isn&#x27;t just about one parent — both matter. 📊
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-5-x_post-2" placeholder="Edit content here...">The researchers found some paternal health effects actually exceed maternal ones. Preconception health isn&#x27;t just about one parent — both matter. 📊
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-5-x_post-2">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-5-x_post-2')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-5-x_post-2')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-5-x_post-2">Characters: 208/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-5-x_post-2">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-5-x_post-2')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-5-x_post-2')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-5-x_post-2')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-5-x_post-2')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-5-x_post-2">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-5-x_post-2" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-5-x_post-2"></div>
+                </div>
+                <div class="card" data-id="story-6-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Disney On Ice Final Weekend + Spring Equinox Hike Tonight</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-6-daily_brief">
+                        <div class="card-content-text">Disney On Ice Final Weekend + Spring Equinox Hike Tonight
+- **Tier:** 2</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-6-daily_brief" placeholder="Edit content here...">Disney On Ice Final Weekend + Spring Equinox Hike Tonight
+- **Tier:** 2</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-6-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-6-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-6-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-6-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-6-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-6-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-6-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-6-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-6-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-6-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-6-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-6-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Disney On Ice Final Weekend + Spring Equinox Hike Tonight</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 6-1</span><span class="tweet-meta-badge tweet-meta-tier">Tier 2</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-6-x_post-1">
+                        <div class="card-content-text">Tonight, 7:30 PM: Spring Equinox Hike at Garden of the Gods with the COS Astronomical Society. $5, 1.5-3 miles, mostly paved. Bring the kids and learn how ancient civilizations used the stars. 🌙
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-6-x_post-1" placeholder="Edit content here...">Tonight, 7:30 PM: Spring Equinox Hike at Garden of the Gods with the COS Astronomical Society. $5, 1.5-3 miles, mostly paved. Bring the kids and learn how ancient civilizations used the stars. 🌙
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-6-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-6-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-6-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-6-x_post-1">Characters: 255/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-6-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-6-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-6-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-6-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-6-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-6-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-6-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-6-x_post-1"></div>
+                </div>
+                <div class="card" data-id="story-6-x_post-2" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">Disney On Ice Final Weekend + Spring Equinox Hike Tonight</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 6-2</span><span class="tweet-meta-badge tweet-meta-tier">Tier 2</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-6-x_post-2">
+                        <div class="card-content-text">Last chance for Disney On Ice at Broadmoor World Arena. Saturday shows at 10:30 AM, 2:30 PM, and 6:30 PM. Sunday at 10:30 AM and 2:30 PM. Road Trip Adventures wraps this weekend.
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-6-x_post-2" placeholder="Edit content here...">Last chance for Disney On Ice at Broadmoor World Arena. Saturday shows at 10:30 AM, 2:30 PM, and 6:30 PM. Sunday at 10:30 AM and 2:30 PM. Road Trip Adventures wraps this weekend.
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-6-x_post-2">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-6-x_post-2')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-6-x_post-2')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-6-x_post-2">Characters: 239/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-6-x_post-2">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-6-x_post-2')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-6-x_post-2')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-6-x_post-2')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-6-x_post-2')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-6-x_post-2">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-6-x_post-2" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-6-x_post-2"></div>
+                </div>
+                <div class="card" data-id="story-7-daily_brief" data-type="daily_brief" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">When Your Spring Break Prep List Is Longer Than Your Kid&#x27;s Attention Span</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-brief">BRIEF</span></div>
+                    </div>
+                    
+
+                    <div class="card-content expanded" id="content-story-7-daily_brief">
+                        <div class="card-content-text">When Your Spring Break Prep List Is Longer Than Your Kid&#x27;s Attention Span
+- **Tier:** 3</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-7-daily_brief" placeholder="Edit content here...">When Your Spring Break Prep List Is Longer Than Your Kid&#x27;s Attention Span
+- **Tier:** 3</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-7-daily_brief">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-7-daily_brief')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-7-daily_brief')">Cancel</button>
+                    </div>
+                    
+                    
+
+                    <div class="card-actions" id="actions-story-7-daily_brief">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-7-daily_brief')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-7-daily_brief')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-7-daily_brief')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-7-daily_brief')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-7-daily_brief">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-7-daily_brief" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-7-daily_brief"></div>
+                </div>
+                <div class="card" data-id="story-7-x_post-1" data-type="x_post" data-status="unreviewed">
+                    <div class="card-header">
+                        <div class="card-title">When Your Spring Break Prep List Is Longer Than Your Kid&#x27;s Attention Span</div>
+                        <div><span class="fact-check-badge fact-check-unverified" title="No fact-check log found — content not verified">NOT VERIFIED</span><span class="card-badge badge-x-post">X POST</span></div>
+                    </div>
+                    <div class="tweet-meta-bar"><span class="tweet-meta-badge tweet-meta-label">Post 7</span><span class="tweet-meta-badge tweet-meta-tier">Tier 3</span><span class="tweet-meta-badge tweet-meta-hashtags">#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</span></div>
+
+                    <div class="card-content expanded" id="content-story-7-x_post-1">
+                        <div class="card-content-text">Spring break starts in three days. You&#x27;re simultaneously booking camps, buying sunscreen because it&#x27;s 84 degrees in March, and wondering how CMZoo sold out before you even opened the email. 😅
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</div>
+                    </div>
+                    <textarea class="edit-textarea" id="editor-story-7-x_post-1" placeholder="Edit content here...">Spring break starts in three days. You&#x27;re simultaneously booking camps, buying sunscreen because it&#x27;s 84 degrees in March, and wondering how CMZoo sold out before you even opened the email. 😅
+
+#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting</textarea>
+                    
+                    
+                    <div class="edit-bar" id="editbar-story-7-x_post-1">
+                        <span class="edit-bar-label">Editing mode — make your changes above</span>
+                        <button class="btn btn-primary" onclick="saveAndApprove('story-7-x_post-1')">Save &amp; Approve</button>
+                        <button class="btn btn-secondary" onclick="cancelEdit('story-7-x_post-1')">Cancel</button>
+                    </div>
+                    <div class="char-count" id="charcount-story-7-x_post-1">Characters: 252/280</div>
+                    
+
+                    <div class="card-actions" id="actions-story-7-x_post-1">
+                        <button class="action-btn btn-approve" onclick="approveCard('story-7-x_post-1')">Approve</button>
+                        <button class="action-btn btn-edit" onclick="startEdit('story-7-x_post-1')">Edit</button>
+                        <button class="action-btn btn-reject" onclick="rejectCard('story-7-x_post-1')">Reject</button>
+                        <button class="action-btn btn-copy" onclick="copyContent('story-7-x_post-1')">Copy</button>
+                    </div>
+
+                    <div class="notes-section" id="notes-story-7-x_post-1">
+                        <div class="notes-label">Reviewer Notes:</div>
+                        <textarea class="notes-textarea" id="textarea-story-7-x_post-1" placeholder="Add reviewer notes..."></textarea>
+                    </div>
+
+                    <div class="status-label" id="status-story-7-x_post-1"></div>
+                </div>
             </div>
 
             <div class="empty-state" id="empty-state" style="display: none;">
@@ -490,7 +1108,7 @@
         const SCHEDULE_STORAGE_KEY = 'parenting-content-schedule-config';
         const PHOTO_SOURCE = 'gemini';
         let reviewData = {};
-        const allStories = [];
+        const allStories = [{"id": "story-1-daily_brief", "title": "Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know", "content": "Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know\n- **Tier:** 1", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-1-x_post-1", "title": "Highway 115 Wildfire: Smoke Visible Across COS, What Families Need to Know", "content": "Smoke visible across Colorado Springs from a 670-acre wildfire on Highway 115 near Fort Carson. No fires within city limits. Hwy 115 closed both directions south of COS.\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 1"}, {"id": "story-2-daily_brief", "title": "Spring Break Camps Start Monday \u2014 Last-Minute Options Still Open", "content": "Spring Break Camps Start Monday \u2014 Last-Minute Options Still Open\n- **Tier:** 1", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-2-x_post-1", "title": "Spring Break Camps Start Monday \u2014 Last-Minute Options Still Open", "content": "Spring break starts Monday. CMZoo camps are sold out but spots remain at CityROCK (ages 6-14), Academy of Children's Theatre (grades 1-12), and Fountain Creek Nature Center (grades 1-5). \ud83c\udfd5\ufe0f\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 2"}, {"id": "story-3-daily_brief", "title": "Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City", "content": "Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City\n- **Tier:** 2", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-3-x_post-1", "title": "Mad Hatter Saturday Tomorrow: Free Festival in Old Colorado City", "content": "Tomorrow, March 21, noon-6 PM: Mad Hatter Saturday at Bancroft Park in Old Colorado City. Free admission, costume contest at 3 PM, live music, and magic. Alice in Wonderland theme. \ud83c\udfa9\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 3"}, {"id": "story-4-daily_brief", "title": "CPSC Recall: Kids' Writing Tablets Pulled Over Battery Danger", "content": "CPSC Recall: Kids' Writing Tablets Pulled Over Battery Danger\n- **Tier:** 1", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-4-x_post-1", "title": "CPSC Recall: Kids' Writing Tablets Pulled Over Battery Danger", "content": "CPSC recall: KTEBO writing tablet toys sold on Amazon have an unsecured battery compartment. Button cell batteries are a serious ingestion hazard for kids. Free replacement available. \u26a0\ufe0f\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 4"}, {"id": "story-5-daily_brief", "title": "Lancet Study: Dad's Health Before Conception Affects Baby's Future", "content": "Lancet Study: Dad's Health Before Conception Affects Baby's Future\n- **Tier:** 2", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-5-x_post-1", "title": "Lancet Study: Dad's Health Before Conception Affects Baby's Future", "content": "New Lancet study: fathers' health before conception \u2014 weight, substance use, stress \u2014 directly affects pregnancy and child outcomes. Paternal drinking linked to 35% higher birth defect risk.\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 5-1"}, {"id": "story-5-x_post-2", "title": "Lancet Study: Dad's Health Before Conception Affects Baby's Future", "content": "The researchers found some paternal health effects actually exceed maternal ones. Preconception health isn't just about one parent \u2014 both matter. \ud83d\udcca\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 5-2"}, {"id": "story-6-daily_brief", "title": "Disney On Ice Final Weekend + Spring Equinox Hike Tonight", "content": "Disney On Ice Final Weekend + Spring Equinox Hike Tonight\n- **Tier:** 2", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-6-x_post-1", "title": "Disney On Ice Final Weekend + Spring Equinox Hike Tonight", "content": "Tonight, 7:30 PM: Spring Equinox Hike at Garden of the Gods with the COS Astronomical Society. $5, 1.5-3 miles, mostly paved. Bring the kids and learn how ancient civilizations used the stars. \ud83c\udf19\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 6-1"}, {"id": "story-6-x_post-2", "title": "Disney On Ice Final Weekend + Spring Equinox Hike Tonight", "content": "Last chance for Disney On Ice at Broadmoor World Arena. Saturday shows at 10:30 AM, 2:30 PM, and 6:30 PM. Sunday at 10:30 AM and 2:30 PM. Road Trip Adventures wraps this weekend.\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 6-2"}, {"id": "story-7-daily_brief", "title": "When Your Spring Break Prep List Is Longer Than Your Kid's Attention Span", "content": "When Your Spring Break Prep List Is Longer Than Your Kid's Attention Span\n- **Tier:** 3", "type": "daily_brief", "posting_window": "", "tweet_type": "", "hashtags": "", "tweet_label": ""}, {"id": "story-7-x_post-1", "title": "When Your Spring Break Prep List Is Longer Than Your Kid's Attention Span", "content": "Spring break starts in three days. You're simultaneously booking camps, buying sunscreen because it's 84 degrees in March, and wondering how CMZoo sold out before you even opened the email. \ud83d\ude05\n\n#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "type": "x_post", "posting_window": "", "tweet_type": "", "hashtags": "#COSParenting #ColoradoSprings #COSKids #PikesPeakParenting", "tweet_label": "Post 7"}];
         const imageManifest = {};
         let imageURLs = {}; // Runtime store: {'1_x_image': 'url', '1_facebook_image': 'url', ...}
 
