@@ -524,22 +524,22 @@
             <div class="traffic-panel-body" id="tp-body">
                 <div class="tp-kpis">
                     <div class="tp-kpi">
-                        <div class="tp-kpi-value">1,858</div>
-                        <div class="tp-kpi-label">Softball Views (7d)</div>
-                        <div class="tp-kpi-trend up">&#9650; 68% vs prev week</div>
+                        <div class="tp-kpi-value" id="tp-kpi-pv">2,723</div>
+                        <div class="tp-kpi-label" id="tp-kpi-pv-label">Total Pageviews (7d)</div>
+                        <div class="tp-kpi-trend up" id="tp-kpi-pv-trend">&#9650; 68% vs prev week</div>
                     </div>
                     <div class="tp-kpi">
-                        <div class="tp-kpi-value">4,573</div>
-                        <div class="tp-kpi-label">Softball Views (30d)</div>
+                        <div class="tp-kpi-value" id="tp-kpi-users">2,291</div>
+                        <div class="tp-kpi-label" id="tp-kpi-users-label">Unique Visitors (7d)</div>
+                        <div class="tp-kpi-trend up" id="tp-kpi-users-trend">&#9650; 58% vs prev week</div>
                     </div>
                     <div class="tp-kpi">
-                        <div class="tp-kpi-value">2,291</div>
-                        <div class="tp-kpi-label">Unique Visitors (7d)</div>
-                        <div class="tp-kpi-trend up">&#9650; 58% vs prev week</div>
+                        <div class="tp-kpi-value" id="tp-kpi-sessions">2,390</div>
+                        <div class="tp-kpi-label" id="tp-kpi-sessions-label">Sessions (7d)</div>
                     </div>
                     <div class="tp-kpi">
-                        <div class="tp-kpi-value">2,723</div>
-                        <div class="tp-kpi-label">All Site Views (7d)</div>
+                        <div class="tp-kpi-value" id="tp-kpi-avg">389</div>
+                        <div class="tp-kpi-label" id="tp-kpi-avg-label">Avg Daily Views (7d)</div>
                     </div>
                 </div>
 
@@ -606,18 +606,53 @@
             var datesEl = document.getElementById('tp-chart-dates');
             var tooltip = document.getElementById('tp-chart-tooltip');
 
+            function fmt(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
             function renderChart(days) {
                 var data = dailyData.slice(-days);
                 var max = Math.max.apply(null, data.map(function(d) { return d.pageviews; }));
                 if (max === 0) max = 1;
                 var html = '';
+                var totalPv = 0, totalUsers = 0, totalSessions = 0;
                 data.forEach(function(d) {
                     var h = Math.max(4, Math.round(d.pageviews / max * 100));
-                    var label = d.date.slice(5);
                     html += '<div class="tp-bar" style="height:' + h + 'px" data-date="' + d.date + '" data-pv="' + d.pageviews + '" data-users="' + d.users + '" data-sessions="' + d.sessions + '"></div>';
+                    totalPv += d.pageviews;
+                    totalUsers += d.users;
+                    totalSessions += d.sessions;
                 });
                 chartEl.innerHTML = html;
                 datesEl.innerHTML = '<span>' + data[0].date.slice(5) + '</span><span>' + data[data.length-1].date.slice(5) + '</span>';
+
+                // Update KPI cards
+                var label = days + 'd';
+                document.getElementById('tp-kpi-pv').textContent = fmt(totalPv);
+                document.getElementById('tp-kpi-pv-label').textContent = 'Total Pageviews (' + label + ')';
+                document.getElementById('tp-kpi-users').textContent = fmt(totalUsers);
+                document.getElementById('tp-kpi-users-label').textContent = 'Unique Visitors (' + label + ')';
+                document.getElementById('tp-kpi-sessions').textContent = fmt(totalSessions);
+                document.getElementById('tp-kpi-sessions-label').textContent = 'Sessions (' + label + ')';
+                var avg = Math.round(totalPv / data.length);
+                document.getElementById('tp-kpi-avg').textContent = fmt(avg);
+                document.getElementById('tp-kpi-avg-label').textContent = 'Avg Daily Views (' + label + ')';
+
+                // Update trend for 7d (compare to previous 7d)
+                if (days === 7) {
+                    var prev = dailyData.slice(-14, -7);
+                    var prevPv = 0, prevUsers = 0;
+                    prev.forEach(function(d) { prevPv += d.pageviews; prevUsers += d.users; });
+                    var pvPct = prevPv > 0 ? Math.round((totalPv - prevPv) / prevPv * 100) : 0;
+                    var uPct = prevUsers > 0 ? Math.round((totalUsers - prevUsers) / prevUsers * 100) : 0;
+                    var pvArrow = pvPct >= 0 ? '&#9650;' : '&#9660;';
+                    var uArrow = uPct >= 0 ? '&#9650;' : '&#9660;';
+                    document.getElementById('tp-kpi-pv-trend').innerHTML = pvArrow + ' ' + Math.abs(pvPct) + '% vs prev week';
+                    document.getElementById('tp-kpi-pv-trend').className = 'tp-kpi-trend ' + (pvPct >= 0 ? 'up' : 'down');
+                    document.getElementById('tp-kpi-users-trend').innerHTML = uArrow + ' ' + Math.abs(uPct) + '% vs prev week';
+                    document.getElementById('tp-kpi-users-trend').className = 'tp-kpi-trend ' + (uPct >= 0 ? 'up' : 'down');
+                } else {
+                    document.getElementById('tp-kpi-pv-trend').textContent = '';
+                    document.getElementById('tp-kpi-users-trend').textContent = '';
+                }
 
                 chartEl.querySelectorAll('.tp-bar').forEach(function(bar) {
                     bar.addEventListener('mouseenter', function(e) {
