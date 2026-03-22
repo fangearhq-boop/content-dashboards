@@ -420,6 +420,14 @@
             font-size: 9px; color: #999; white-space: nowrap;
         }
         .tp-chart-dates { display: flex; justify-content: space-between; font-size: 10px; color: #999; margin-top: 4px; }
+
+        .tp-period-btns { display: flex; gap: 4px; }
+        .tp-period-btn {
+            background: #e9ecef; border: none; padding: 4px 10px; border-radius: 4px;
+            font-size: 12px; cursor: pointer; color: #666; font-weight: 600;
+        }
+        .tp-period-btn:hover { background: #dee2e6; }
+        .tp-period-btn.active { background: #FF8A00; color: white; }
     </style>
 </head>
 <body>
@@ -509,7 +517,7 @@
             <div class="traffic-panel-header">
                 <div>
                     <h2>Content Performance &mdash; fanrumor.com</h2>
-                    <div class="tp-subtitle">Updated 2026-03-22 14:51 &bull; GA4 data</div>
+                    <div class="tp-subtitle">Updated 2026-03-22 15:08 &bull; GA4 data</div>
                 </div>
                 <button class="traffic-panel-toggle" onclick="document.getElementById('tp-body').classList.toggle('collapsed'); this.textContent = this.textContent === 'Hide' ? 'Show' : 'Hide'">Hide</button>
             </div>
@@ -537,118 +545,115 @@
 
                 <div class="tp-sections">
                     <div class="tp-section">
-                        <h3>Daily Pageviews (14 days)</h3>
-                        <div class="tp-chart-container">
-                            <div class="tp-bar-chart"><div class="tp-bar" style="height:22px" title="2026-03-09: 182 pageviews"></div>
-<div class="tp-bar" style="height:34px" title="2026-03-10: 273 pageviews"></div>
-<div class="tp-bar" style="height:20px" title="2026-03-11: 166 pageviews"></div>
-<div class="tp-bar" style="height:61px" title="2026-03-12: 485 pageviews"></div>
-<div class="tp-bar" style="height:20px" title="2026-03-13: 161 pageviews"></div>
-<div class="tp-bar" style="height:9px" title="2026-03-14: 75 pageviews"></div>
-<div class="tp-bar" style="height:13px" title="2026-03-15: 104 pageviews"></div>
-<div class="tp-bar" style="height:30px" title="2026-03-16: 239 pageviews"></div>
-<div class="tp-bar" style="height:56px" title="2026-03-17: 446 pageviews"></div>
-<div class="tp-bar" style="height:52px" title="2026-03-18: 415 pageviews"></div>
-<div class="tp-bar" style="height:100px" title="2026-03-19: 792 pageviews"></div>
-<div class="tp-bar" style="height:55px" title="2026-03-20: 437 pageviews"></div>
-<div class="tp-bar" style="height:30px" title="2026-03-21: 243 pageviews"></div>
-<div class="tp-bar" style="height:5px" title="2026-03-22: 47 pageviews"></div>
-</div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                            <h3 style="margin:0">Daily Pageviews</h3>
+                            <div class="tp-period-btns">
+                                <button class="tp-period-btn" onclick="tpSetPeriod(7)" id="tp-btn-7">7d</button>
+                                <button class="tp-period-btn active" onclick="tpSetPeriod(14)" id="tp-btn-14">14d</button>
+                                <button class="tp-period-btn" onclick="tpSetPeriod(30)" id="tp-btn-30">30d</button>
+                            </div>
                         </div>
-                        <div class="tp-chart-dates"><span>03-09</span><span>03-22</span></div>
+                        <div id="tp-chart-area">
+                            <div class="tp-chart-container">
+                                <div class="tp-bar-chart" id="tp-bar-chart"></div>
+                            </div>
+                            <div class="tp-chart-dates" id="tp-chart-dates"></div>
+                        </div>
+                        <div id="tp-chart-tooltip" style="display:none;position:fixed;background:#1a1a2e;color:white;padding:8px 12px;border-radius:6px;font-size:12px;pointer-events:none;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.3)"></div>
                     </div>
                     <div class="tp-section">
                         <h3>Traffic Sources (7d)</h3>
                         <table class="tp-table">
                             <thead><tr><th>Source</th><th style="text-align:right">Sessions</th><th style="text-align:right">%</th></tr></thead>
-                            <tbody><tr>
-                <td>(direct)</td>
-                <td class="tp-num">901</td>
-                <td class="tp-num" style="width:60px">40%</td>
-            </tr><tr>
-                <td>softball</td>
-                <td class="tp-num">579</td>
-                <td class="tp-num" style="width:60px">26%</td>
-            </tr><tr>
-                <td>oklahoma-sooners</td>
-                <td class="tp-num">307</td>
-                <td class="tp-num" style="width:60px">14%</td>
-            </tr><tr>
-                <td>oklahoma-state-cowboys</td>
-                <td class="tp-num">171</td>
-                <td class="tp-num" style="width:60px">8%</td>
-            </tr><tr>
-                <td>alabama-crimson-tide</td>
-                <td class="tp-num">162</td>
-                <td class="tp-num" style="width:60px">7%</td>
-            </tr><tr>
-                <td>texas-longhorns</td>
-                <td class="tp-num">134</td>
-                <td class="tp-num" style="width:60px">6%</td>
-            </tr></tbody>
+                            <tbody><tr><td>(direct)</td><td class="tp-num">901</td><td class="tp-num" style="width:60px">40%</td></tr><tr><td>softball</td><td class="tp-num">579</td><td class="tp-num" style="width:60px">26%</td></tr><tr><td>oklahoma-sooners</td><td class="tp-num">307</td><td class="tp-num" style="width:60px">14%</td></tr><tr><td>oklahoma-state-cowboys</td><td class="tp-num">171</td><td class="tp-num" style="width:60px">8%</td></tr><tr><td>alabama-crimson-tide</td><td class="tp-num">162</td><td class="tp-num" style="width:60px">7%</td></tr><tr><td>texas-longhorns</td><td class="tp-num">134</td><td class="tp-num" style="width:60px">6%</td></tr></tbody>
                         </table>
                     </div>
                 </div>
 
-                <div class="tp-section" style="margin-top:20px">
-                    <h3>Top Performing Articles (7d)</h3>
-                    <table class="tp-table">
-                        <thead><tr><th style="width:30px">#</th><th>Article</th><th style="text-align:right">Views</th><th style="text-align:right">Users</th></tr></thead>
-                        <tbody><tr>
-                <td style="color:#999;width:30px">1</td>
-                <td class="tp-title" title="NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and the Numbers That Matter">NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and th</td>
-                <td class="tp-num">756</td>
-                <td class="tp-num">615</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">2</td>
-                <td class="tp-title" title="Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25">Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25</td>
-                <td class="tp-num">325</td>
-                <td class="tp-num">270</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">3</td>
-                <td class="tp-title" title="Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season">Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season</td>
-                <td class="tp-num">206</td>
-                <td class="tp-num">184</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">4</td>
-                <td class="tp-title" title="NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is Coming">NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is C</td>
-                <td class="tp-num">123</td>
-                <td class="tp-num">103</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">5</td>
-                <td class="tp-title" title="Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore">Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore</td>
-                <td class="tp-num">108</td>
-                <td class="tp-num">81</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">6</td>
-                <td class="tp-title" title="Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K in Two Complete Games">Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K i</td>
-                <td class="tp-num">98</td>
-                <td class="tp-num">85</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">7</td>
-                <td class="tp-title" title="Tennessee&#x27;s Unbeaten Run Ends at 26, But Pickens Returns to Win Series">Tennessee&#x27;s Unbeaten Run Ends at 26, But Pickens Returns to Win Series</td>
-                <td class="tp-num">82</td>
-                <td class="tp-num">72</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">8</td>
-                <td class="tp-title" title="Texas Ties Program Record with 24th Straight Win, Hosts Baylor for the Record-Breaker">Texas Ties Program Record with 24th Straight Win, Hosts Baylor for the</td>
-                <td class="tp-num">71</td>
-                <td class="tp-num">60</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">9</td>
-                <td class="tp-title" title="Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win">Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win</td>
-                <td class="tp-num">45</td>
-                <td class="tp-num">31</td>
-            </tr><tr>
-                <td style="color:#999;width:30px">10</td>
-                <td class="tp-title" title="Oklahoma Launches 5 Home Runs, Pushes Season Total to 108 Ahead of SEC Play">Oklahoma Launches 5 Home Runs, Pushes Season Total to 108 Ahead of SEC</td>
-                <td class="tp-num">11</td>
-                <td class="tp-num">9</td>
-            </tr></tbody>
-                    </table>
+                <div class="tp-sections" style="margin-top:20px">
+                    <div class="tp-section">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                            <h3 style="margin:0">Top Performing Articles</h3>
+                            <div class="tp-period-btns">
+                                <button class="tp-period-btn active" onclick="tpSetArticles('7d')" id="tp-art-7d">7d</button>
+                                <button class="tp-period-btn" onclick="tpSetArticles('30d')" id="tp-art-30d">30d</button>
+                            </div>
+                        </div>
+                        <table class="tp-table" id="tp-articles-7d">
+                            <thead><tr><th style="width:30px">#</th><th>Article</th><th style="text-align:right">Views</th><th style="text-align:right">Users</th></tr></thead>
+                            <tbody><tr><td style="color:#999;width:30px">1</td><td class="tp-title" title="NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and the Numbers That Matter">NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and th</td><td class="tp-num">756</td><td class="tp-num">615</td></tr><tr><td style="color:#999;width:30px">2</td><td class="tp-title" title="Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25">Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25</td><td class="tp-num">325</td><td class="tp-num">270</td></tr><tr><td style="color:#999;width:30px">3</td><td class="tp-title" title="Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season">Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season</td><td class="tp-num">206</td><td class="tp-num">184</td></tr><tr><td style="color:#999;width:30px">4</td><td class="tp-title" title="NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is Coming">NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is C</td><td class="tp-num">123</td><td class="tp-num">103</td></tr><tr><td style="color:#999;width:30px">5</td><td class="tp-title" title="Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore">Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore</td><td class="tp-num">108</td><td class="tp-num">81</td></tr><tr><td style="color:#999;width:30px">6</td><td class="tp-title" title="Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K in Two Complete Games">Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K i</td><td class="tp-num">98</td><td class="tp-num">85</td></tr><tr><td style="color:#999;width:30px">7</td><td class="tp-title" title="Tennessee&#x27;s Unbeaten Run Ends at 26, But Pickens Returns to Win Series">Tennessee&#x27;s Unbeaten Run Ends at 26, But Pickens Returns to Win Series</td><td class="tp-num">82</td><td class="tp-num">72</td></tr><tr><td style="color:#999;width:30px">8</td><td class="tp-title" title="Texas Ties Program Record with 24th Straight Win, Hosts Baylor for the Record-Breaker">Texas Ties Program Record with 24th Straight Win, Hosts Baylor for the</td><td class="tp-num">71</td><td class="tp-num">60</td></tr><tr><td style="color:#999;width:30px">9</td><td class="tp-title" title="Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win">Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win</td><td class="tp-num">45</td><td class="tp-num">31</td></tr><tr><td style="color:#999;width:30px">10</td><td class="tp-title" title="Oklahoma Launches 5 Home Runs, Pushes Season Total to 108 Ahead of SEC Play">Oklahoma Launches 5 Home Runs, Pushes Season Total to 108 Ahead of SEC</td><td class="tp-num">11</td><td class="tp-num">9</td></tr></tbody>
+                        </table>
+                        <table class="tp-table" id="tp-articles-30d" style="display:none">
+                            <thead><tr><th style="width:30px">#</th><th>Article</th><th style="text-align:right">Views</th><th style="text-align:right">Users</th></tr></thead>
+                            <tbody><tr><td style="color:#999;width:30px">1</td><td class="tp-title" title="NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and the Numbers That Matter">NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and th</td><td class="tp-num">756</td><td class="tp-num">615</td></tr><tr><td style="color:#999;width:30px">2</td><td class="tp-title" title="Week 4 Rankings: Alabama Surges to No. 4, Oklahoma Falls, Three New Faces Enter Top 25">Week 4 Rankings: Alabama Surges to No. 4, Oklahoma Falls, Three New Fa</td><td class="tp-num">715</td><td class="tp-num">600</td></tr><tr><td style="color:#999;width:30px">3</td><td class="tp-title" title="Alabama Is 20-0 and Ranked #4 The Biggest Snub in College Softball?">Alabama Is 20-0 and Ranked #4 The Biggest Snub in College Softball?</td><td class="tp-num">539</td><td class="tp-num">469</td></tr><tr><td style="color:#999;width:30px">4</td><td class="tp-title" title="Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win">Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win</td><td class="tp-num">400</td><td class="tp-num">317</td></tr><tr><td style="color:#999;width:30px">5</td><td class="tp-title" title="Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25">Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25</td><td class="tp-num">325</td><td class="tp-num">270</td></tr><tr><td style="color:#999;width:30px">6</td><td class="tp-title" title="SEC Softball Opens Friday, Full Conference Preview With All Six Opening Series">SEC Softball Opens Friday, Full Conference Preview With All Six Openin</td><td class="tp-num">221</td><td class="tp-num">166</td></tr><tr><td style="color:#999;width:30px">7</td><td class="tp-title" title="Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season">Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season</td><td class="tp-num">206</td><td class="tp-num">184</td></tr><tr><td style="color:#999;width:30px">8</td><td class="tp-title" title="Big 12 Conference Play Starts Tomorrow, Full Opening Weekend Preview">Big 12 Conference Play Starts Tomorrow, Full Opening Weekend Preview</td><td class="tp-num">145</td><td class="tp-num">113</td></tr><tr><td style="color:#999;width:30px">9</td><td class="tp-title" title="ACC Softball Already Delivering, Louisville Tops Stanford, Georgia Tech Makes History">ACC Softball Already Delivering, Louisville Tops Stanford, Georgia Tec</td><td class="tp-num">144</td><td class="tp-num">119</td></tr><tr><td style="color:#999;width:30px">10</td><td class="tp-title" title="NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is Coming">NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is C</td><td class="tp-num">123</td><td class="tp-num">103</td></tr><tr><td style="color:#999;width:30px">11</td><td class="tp-title" title="Judi Garman Classic Preview: Florida&#x27;s 19-0 Perfection Faces Its First Real Test Against UCLA">Judi Garman Classic Preview: Florida&#x27;s 19-0 Perfection Faces Its First</td><td class="tp-num">122</td><td class="tp-num">108</td></tr><tr><td style="color:#999;width:30px">12</td><td class="tp-title" title="#12 Arizona at #2 Texas Tech: Canady&#x27;s Historic Run Meets Big 12 Home Opener">#12 Arizona at #2 Texas Tech: Canady&#x27;s Historic Run Meets Big 12 Home </td><td class="tp-num">119</td><td class="tp-num">96</td></tr><tr><td style="color:#999;width:30px">13</td><td class="tp-title" title="Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore">Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore</td><td class="tp-num">108</td><td class="tp-num">81</td></tr><tr><td style="color:#999;width:30px">14</td><td class="tp-title" title="Tennessee Stays Perfect at 19-0 as Pickens Ties Career High With 15 Strikeouts">Tennessee Stays Perfect at 19-0 as Pickens Ties Career High With 15 St</td><td class="tp-num">103</td><td class="tp-num">93</td></tr><tr><td style="color:#999;width:30px">15</td><td class="tp-title" title="Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K in Two Complete Games">Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K i</td><td class="tp-num">98</td><td class="tp-num">85</td></tr></tbody>
+                        </table>
+                    </div>
+                    <div class="tp-section">
+                        <h3>Softball Visitors by Month</h3>
+                        <table class="tp-table">
+                            <thead><tr><th>Month</th><th style="text-align:right">Views</th><th style="text-align:right">Visitors</th><th style="text-align:right">Articles</th></tr></thead>
+                            <tbody><tr><td style="font-weight:600">Sep 2025</td><td class="tp-num">50</td><td class="tp-num">46</td><td class="tp-num">25</td></tr><tr><td style="font-weight:600">Oct 2025</td><td class="tp-num">93</td><td class="tp-num">90</td><td class="tp-num">66</td></tr><tr><td style="font-weight:600">Nov 2025</td><td class="tp-num">616</td><td class="tp-num">605</td><td class="tp-num">198</td></tr><tr><td style="font-weight:600">Dec 2025</td><td class="tp-num">973</td><td class="tp-num">975</td><td class="tp-num">249</td></tr><tr><td style="font-weight:600">Jan 2026</td><td class="tp-num">145</td><td class="tp-num">145</td><td class="tp-num">61</td></tr><tr><td style="font-weight:600">Feb 2026</td><td class="tp-num">764</td><td class="tp-num">661</td><td class="tp-num">43</td></tr><tr><td style="font-weight:600">Mar 2026</td><td class="tp-num">4,062</td><td class="tp-num">3,401</td><td class="tp-num">67</td></tr></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script>
+        (function() {
+            var dailyData = [{"date": "2026-03-09", "sessions": 181, "pageviews": 182, "users": 179, "bounce_rate": 0.928}, {"date": "2026-03-10", "sessions": 258, "pageviews": 273, "users": 254, "bounce_rate": 0.884}, {"date": "2026-03-11", "sessions": 162, "pageviews": 166, "users": 160, "bounce_rate": 0.864}, {"date": "2026-03-12", "sessions": 428, "pageviews": 485, "users": 410, "bounce_rate": 0.804}, {"date": "2026-03-13", "sessions": 138, "pageviews": 161, "users": 136, "bounce_rate": 0.746}, {"date": "2026-03-14", "sessions": 66, "pageviews": 75, "users": 66, "bounce_rate": 0.879}, {"date": "2026-03-15", "sessions": 78, "pageviews": 104, "users": 77, "bounce_rate": 0.872}, {"date": "2026-03-16", "sessions": 239, "pageviews": 239, "users": 237, "bounce_rate": 0.95}, {"date": "2026-03-17", "sessions": 413, "pageviews": 446, "users": 395, "bounce_rate": 0.814}, {"date": "2026-03-18", "sessions": 381, "pageviews": 415, "users": 364, "bounce_rate": 0.803}, {"date": "2026-03-19", "sessions": 682, "pageviews": 792, "users": 643, "bounce_rate": 0.755}, {"date": "2026-03-20", "sessions": 368, "pageviews": 437, "users": 351, "bounce_rate": 0.668}, {"date": "2026-03-21", "sessions": 191, "pageviews": 243, "users": 186, "bounce_rate": 0.717}, {"date": "2026-03-22", "sessions": 38, "pageviews": 47, "users": 38, "bounce_rate": 0.816}];
+            var chartEl = document.getElementById('tp-bar-chart');
+            var datesEl = document.getElementById('tp-chart-dates');
+            var tooltip = document.getElementById('tp-chart-tooltip');
+
+            function renderChart(days) {
+                var data = dailyData.slice(-days);
+                var max = Math.max.apply(null, data.map(function(d) { return d.pageviews; }));
+                if (max === 0) max = 1;
+                var html = '';
+                data.forEach(function(d) {
+                    var h = Math.max(4, Math.round(d.pageviews / max * 100));
+                    var label = d.date.slice(5);
+                    html += '<div class="tp-bar" style="height:' + h + 'px" data-date="' + d.date + '" data-pv="' + d.pageviews + '" data-users="' + d.users + '" data-sessions="' + d.sessions + '"></div>';
+                });
+                chartEl.innerHTML = html;
+                datesEl.innerHTML = '<span>' + data[0].date.slice(5) + '</span><span>' + data[data.length-1].date.slice(5) + '</span>';
+
+                chartEl.querySelectorAll('.tp-bar').forEach(function(bar) {
+                    bar.addEventListener('mouseenter', function(e) {
+                        tooltip.innerHTML = '<strong>' + bar.dataset.date + '</strong><br>' +
+                            bar.dataset.pv + ' pageviews<br>' +
+                            bar.dataset.users + ' users<br>' +
+                            bar.dataset.sessions + ' sessions';
+                        tooltip.style.display = 'block';
+                    });
+                    bar.addEventListener('mousemove', function(e) {
+                        tooltip.style.left = (e.clientX + 12) + 'px';
+                        tooltip.style.top = (e.clientY - 10) + 'px';
+                    });
+                    bar.addEventListener('mouseleave', function() {
+                        tooltip.style.display = 'none';
+                    });
+                });
+            }
+
+            window.tpSetPeriod = function(days) {
+                renderChart(days);
+                document.querySelectorAll('.tp-period-btns .tp-period-btn').forEach(function(b) { b.classList.remove('active'); });
+                var btn = document.getElementById('tp-btn-' + days);
+                if (btn) btn.classList.add('active');
+            };
+
+            window.tpSetArticles = function(period) {
+                document.getElementById('tp-articles-7d').style.display = period === '7d' ? '' : 'none';
+                document.getElementById('tp-articles-30d').style.display = period === '30d' ? '' : 'none';
+                document.getElementById('tp-art-7d').classList.toggle('active', period === '7d');
+                document.getElementById('tp-art-30d').classList.toggle('active', period === '30d');
+            };
+
+            renderChart(14);
+        })();
+        </script>
 
         <div class="content">
             <div class="cards-container" id="cards-container">
