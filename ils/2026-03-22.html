@@ -361,6 +361,65 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* ─── Traffic Performance Panel ─── */
+        .traffic-panel {
+            background: white; margin: 20px 30px 0; border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden;
+        }
+        .traffic-panel-header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .traffic-panel-header h2 { font-size: 18px; font-weight: 700; }
+        .traffic-panel-header .tp-subtitle { font-size: 12px; color: #aaa; margin-top: 4px; }
+        .traffic-panel-toggle {
+            background: rgba(255,255,255,0.15); border: none; color: white; padding: 6px 14px;
+            border-radius: 6px; cursor: pointer; font-size: 13px;
+        }
+        .traffic-panel-toggle:hover { background: rgba(255,255,255,0.25); }
+        .traffic-panel-body { padding: 25px; }
+        .traffic-panel-body.collapsed { display: none; }
+
+        .tp-kpis {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px; margin-bottom: 25px;
+        }
+        .tp-kpi {
+            background: #f8f9fa; border-radius: 10px; padding: 18px; text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        .tp-kpi-value { font-size: 28px; font-weight: 700; color: #1a1a2e; }
+        .tp-kpi-label { font-size: 12px; color: #666; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tp-kpi-trend { font-size: 13px; margin-top: 6px; font-weight: 600; }
+        .tp-kpi-trend.up { color: #22c55e; }
+        .tp-kpi-trend.down { color: #ef4444; }
+
+        .tp-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 1200px) { .tp-sections { grid-template-columns: 1fr; } }
+
+        .tp-section { background: #f8f9fa; border-radius: 10px; padding: 20px; border: 1px solid #e9ecef; }
+        .tp-section h3 { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .tp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tp-table th { text-align: left; padding: 8px 10px; border-bottom: 2px solid #dee2e6; color: #666; font-weight: 600; font-size: 11px; text-transform: uppercase; }
+        .tp-table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+        .tp-table tr:hover { background: #e9ecef; }
+        .tp-table .tp-title { max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .tp-table .tp-num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+
+        .tp-chart-container { position: relative; height: 120px; margin-bottom: 10px; }
+        .tp-bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 100px; }
+        .tp-bar {
+            flex: 1; background: #FF8A00; border-radius: 3px 3px 0 0; min-width: 6px;
+            position: relative; transition: opacity 0.2s;
+        }
+        .tp-bar:hover { opacity: 0.8; }
+        .tp-bar-label {
+            position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+            font-size: 9px; color: #999; white-space: nowrap;
+        }
+        .tp-chart-dates { display: flex; justify-content: space-between; font-size: 10px; color: #999; margin-top: 4px; }
     </style>
 </head>
 <body>
@@ -443,6 +502,152 @@
             <button class="filter-btn" onclick="filterByStatus('approved')">Approved</button>
             <button class="filter-btn" onclick="filterByStatus('needs-edit')">Needs Edit</button>
             <button class="filter-btn" onclick="filterByStatus('rejected')">Rejected</button>
+        </div>
+
+
+        <div class="traffic-panel" id="traffic-panel">
+            <div class="traffic-panel-header">
+                <div>
+                    <h2>Content Performance &mdash; fanrumor.com</h2>
+                    <div class="tp-subtitle">Updated 2026-03-22 14:23 &bull; GA4 data</div>
+                </div>
+                <button class="traffic-panel-toggle" onclick="document.getElementById('tp-body').classList.toggle('collapsed'); this.textContent = this.textContent === 'Hide' ? 'Show' : 'Hide'">Hide</button>
+            </div>
+            <div class="traffic-panel-body" id="tp-body">
+                <div class="tp-kpis">
+                    <div class="tp-kpi">
+                        <div class="tp-kpi-value">1,857</div>
+                        <div class="tp-kpi-label">Softball Views (7d)</div>
+                        <div class="tp-kpi-trend up">&#9650; 68% vs prev week</div>
+                    </div>
+                    <div class="tp-kpi">
+                        <div class="tp-kpi-value">4,572</div>
+                        <div class="tp-kpi-label">Softball Views (30d)</div>
+                    </div>
+                    <div class="tp-kpi">
+                        <div class="tp-kpi-value">2,288</div>
+                        <div class="tp-kpi-label">Unique Visitors (7d)</div>
+                        <div class="tp-kpi-trend up">&#9650; 57% vs prev week</div>
+                    </div>
+                    <div class="tp-kpi">
+                        <div class="tp-kpi-value">2,720</div>
+                        <div class="tp-kpi-label">All Site Views (7d)</div>
+                    </div>
+                </div>
+
+                <div class="tp-sections">
+                    <div class="tp-section">
+                        <h3>Daily Pageviews (14 days)</h3>
+                        <div class="tp-chart-container">
+                            <div class="tp-bar-chart"><div class="tp-bar" style="height:22px" title="2026-03-09: 182 pageviews"></div>
+<div class="tp-bar" style="height:34px" title="2026-03-10: 273 pageviews"></div>
+<div class="tp-bar" style="height:20px" title="2026-03-11: 166 pageviews"></div>
+<div class="tp-bar" style="height:61px" title="2026-03-12: 485 pageviews"></div>
+<div class="tp-bar" style="height:20px" title="2026-03-13: 161 pageviews"></div>
+<div class="tp-bar" style="height:9px" title="2026-03-14: 75 pageviews"></div>
+<div class="tp-bar" style="height:13px" title="2026-03-15: 104 pageviews"></div>
+<div class="tp-bar" style="height:30px" title="2026-03-16: 239 pageviews"></div>
+<div class="tp-bar" style="height:56px" title="2026-03-17: 446 pageviews"></div>
+<div class="tp-bar" style="height:52px" title="2026-03-18: 415 pageviews"></div>
+<div class="tp-bar" style="height:100px" title="2026-03-19: 792 pageviews"></div>
+<div class="tp-bar" style="height:55px" title="2026-03-20: 437 pageviews"></div>
+<div class="tp-bar" style="height:30px" title="2026-03-21: 243 pageviews"></div>
+<div class="tp-bar" style="height:5px" title="2026-03-22: 44 pageviews"></div>
+</div>
+                        </div>
+                        <div class="tp-chart-dates"><span>03-09</span><span>03-22</span></div>
+                    </div>
+                    <div class="tp-section">
+                        <h3>Traffic Sources (7d)</h3>
+                        <table class="tp-table">
+                            <thead><tr><th>Source</th><th style="text-align:right">Sessions</th><th style="text-align:right">%</th></tr></thead>
+                            <tbody><tr>
+                <td>(direct)</td>
+                <td class="tp-num">899</td>
+                <td class="tp-num" style="width:60px">40%</td>
+            </tr><tr>
+                <td>softball</td>
+                <td class="tp-num">578</td>
+                <td class="tp-num" style="width:60px">26%</td>
+            </tr><tr>
+                <td>oklahoma-sooners</td>
+                <td class="tp-num">307</td>
+                <td class="tp-num" style="width:60px">14%</td>
+            </tr><tr>
+                <td>oklahoma-state-cowboys</td>
+                <td class="tp-num">171</td>
+                <td class="tp-num" style="width:60px">8%</td>
+            </tr><tr>
+                <td>alabama-crimson-tide</td>
+                <td class="tp-num">162</td>
+                <td class="tp-num" style="width:60px">7%</td>
+            </tr><tr>
+                <td>texas-longhorns</td>
+                <td class="tp-num">134</td>
+                <td class="tp-num" style="width:60px">6%</td>
+            </tr></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tp-section" style="margin-top:20px">
+                    <h3>Top Performing Articles (7d)</h3>
+                    <table class="tp-table">
+                        <thead><tr><th style="width:30px">#</th><th>Article</th><th style="text-align:right">Views</th><th style="text-align:right">Users</th></tr></thead>
+                        <tbody><tr>
+                <td style="color:#999;width:30px">1</td>
+                <td class="tp-title" title="NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and the Numbers That Matter">NCAA Softball Stat Leaders at Midseason: Polar, Wells, Johnson, and th</td>
+                <td class="tp-num">755</td>
+                <td class="tp-num">614</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">2</td>
+                <td class="tp-title" title="Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25">Texas Surges to No. 2 as New NFCA and ESPN Polls Reshape the Top 25</td>
+                <td class="tp-num">325</td>
+                <td class="tp-num">270</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">3</td>
+                <td class="tp-title" title="Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season">Amanda Hasler&#x27;s Two Three-Run Blasts Ended GCU&#x27;s Perfect Season</td>
+                <td class="tp-num">206</td>
+                <td class="tp-num">184</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">4</td>
+                <td class="tp-title" title="NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is Coming">NFCA Poll Preview: The Biggest Top-10 Shake-Up of the 2026 Season Is C</td>
+                <td class="tp-num">123</td>
+                <td class="tp-num">103</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">5</td>
+                <td class="tp-title" title="Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore">Jocelyn Briski&#x27;s All-American Case Just Got Impossible to Ignore</td>
+                <td class="tp-num">108</td>
+                <td class="tp-num">81</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">6</td>
+                <td class="tp-title" title="Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K in Two Complete Games">Alabama&#x27;s Perfect Season Ends, But Briski Saves the Series with 24 K i</td>
+                <td class="tp-num">98</td>
+                <td class="tp-num">85</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">7</td>
+                <td class="tp-title" title="Tennessee&#x27;s Unbeaten Run Ends at 26, But Pickens Returns to Win Series">Tennessee&#x27;s Unbeaten Run Ends at 26, But Pickens Returns to Win Series</td>
+                <td class="tp-num">82</td>
+                <td class="tp-num">72</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">8</td>
+                <td class="tp-title" title="Texas Ties Program Record with 24th Straight Win, Hosts Baylor for the Record-Breaker">Texas Ties Program Record with 24th Straight Win, Hosts Baylor for the</td>
+                <td class="tp-num">71</td>
+                <td class="tp-num">60</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">9</td>
+                <td class="tp-title" title="Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win">Katie Stewart&#x27;s Walkoff Grand Slam Powers Texas to 21st Straight Win</td>
+                <td class="tp-num">45</td>
+                <td class="tp-num">31</td>
+            </tr><tr>
+                <td style="color:#999;width:30px">10</td>
+                <td class="tp-title" title="Oklahoma Launches 5 Home Runs, Pushes Season Total to 108 Ahead of SEC Play">Oklahoma Launches 5 Home Runs, Pushes Season Total to 108 Ahead of SEC</td>
+                <td class="tp-num">11</td>
+                <td class="tp-num">9</td>
+            </tr></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <div class="content">
